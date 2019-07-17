@@ -17,21 +17,25 @@
 # return new array
 
 # --- my solution
-def reverse(arr)
-  new_arr = []
-  index = -1
+# def reverse(arr)
+#   new_arr = []
+#   index = -1
   
-  while index.abs <= arr.size
-    new_arr << arr[index]
-    index -= 1
-  end
+#   while index.abs <= arr.size
+#     new_arr << arr[index]
+#     index -= 1
+#   end
   
-  new_arr
-end
+#   new_arr
+# end
 
 # --- using each_with_object
 def reverse(arr)
   arr.each_with_object([]) { |item, arr| arr.prepend(item) }
+end
+
+def reverse_inject(arr)
+  arr.inject(Array.new) { |result_arr, item| result_arr.prepend(item) }
 end
 
 # Examples:
@@ -46,3 +50,8 @@ new_list = reverse(list)              # => [2, 3, 1]
 puts list.object_id != new_list.object_id  # => true
 puts list == [1, 3, 2]                     # => true
 puts new_list == [2, 3, 1]                 # => true
+
+puts reverse_inject([1,2,3,4]) == [4,3,2,1]          # => true
+puts reverse_inject(%w(a b e d c)) == %w(c d e b a)  # => true
+puts reverse_inject(['abc']) == ['abc']              # => true
+puts reverse_inject([]) == []                        # => true
