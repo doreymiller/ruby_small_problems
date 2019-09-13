@@ -1,0 +1,4 @@
+The ADJECTIVE_1 ADJECTIVE_2 NOUN_1 VERB_1 up the water spout.
+Down came the NOUN_2, and washed the NOUN_1 out.
+Out came the sun, and VERB_2 up all the NOUN_2,
+and the ADJECTIVE_1 ADJECTIVE_2 NOUN_1 VERB_1 up the spout again”
