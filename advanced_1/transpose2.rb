@@ -10,16 +10,29 @@
 
 
 # --- my solution
-def transpose(matrix)
-  trans_a = Array.new(matrix[0].length){Array.new(matrix.length)}
+# def transpose(matrix)
+#   trans_a = Array.new(matrix[0].length){Array.new(matrix.length)}
    
-  matrix.each_index do |outer|
-   matrix[outer].each_index do |index|
-      trans_a[index][outer] = matrix[outer][index]
-    end
-  end
+#   matrix.each_index do |outer|
+#   matrix[outer].each_index do |index|
+#       trans_a[index][outer] = matrix[outer][index]
+#     end
+#   end
   
-  trans_a
+#   trans_a
+# end
+
+# --- ls solution
+def transpose(matrix)
+  results = []
+  num_rows = matrix.size
+  num_columns = matrix.first.size
+  (0...num_columns).each do |column_index|
+    new_row = (0...num_rows).map { |row_index| matrix[row_index][column_index]}
+    p new_row
+    results << new_row
+  end
+  results
 end
 
 
